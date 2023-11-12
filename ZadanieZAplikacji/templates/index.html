@@ -1,0 +1,31 @@
+<form method="post" class="mb-3" action="/getName">
+    <div class="form-group">
+        <label for="last_name">Nazwisko:</label>
+        <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Wprowadź nazwisko">
+    </div>
+    <button type="submit" class="btn btn-primary">Wyszukaj</button>
+</form>
+<p>Suma wypłat: {{total_salary }}</p>
+<p>Minimalna wypłata: {{min_salary }}</p>
+<p>Maksymalna wypłata: {{max_salary }}</p>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>ID </th>
+            <th>Nazwisko</th>
+            <th>Imie </th>
+            <th>Wypłata</th>
+        </tr>
+    </thead>
+    <tbody>
+            {% for row in arr %}
+                <tr>
+                    {% for el in row %}
+                    <td>
+                        {{el }}
+                    </td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+    </tbody>
+</table>
